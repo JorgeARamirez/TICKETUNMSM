@@ -29,21 +29,7 @@ def create_connection():
 
 @app.route('/main')
 def main_content():
-    # Realiza una solicitud GET a la ruta /menu
-    response = requests.get('https://python-flask-webapp-test.azurewebsites.net/menu')
-
-    # Verifica si la solicitud fue exitosa (código de respuesta 200)
-    if response.status_code == 200:
-        # Obtiene los datos del menú en formato JSON
-        menu_data = response.json()
-
-        # Renderiza el archivo mainContent.html y pasa los datos del menú como argumento
-        return render_template('mainContent.html', menu=menu_data)
-    
-    else:
-        # Si la solicitud no fue exitosa, muestra un mensaje de error
-        return 'Error al obtener el menu del dia'
-
+    return render_template('mainContent.html')
 
         
 
