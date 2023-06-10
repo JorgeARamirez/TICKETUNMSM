@@ -30,7 +30,7 @@ def create_connection():
 @app.route('/main')
 def main_content():
     # Realiza una solicitud GET a la ruta /menu
-    response = requests.get('http://localhost:4000/menu')
+    response = requests.get('https://python-flask-webapp-test.azurewebsites.net/menu')
 
     # Verifica si la solicitud fue exitosa (código de respuesta 200)
     if response.status_code == 200:
@@ -42,7 +42,7 @@ def main_content():
     
     else:
         # Si la solicitud no fue exitosa, muestra un mensaje de error
-        return 'Error al obtener el menú del día'
+        return 'Error al obtener el menu del dia'
 
 
         
@@ -74,7 +74,7 @@ def obtener_menu_dia():
 
         # Verifica si se encontró el menú del día
         if menu is None:
-            return jsonify({'mensaje': 'No se encontró el menú del día'})
+            return jsonify({'mensaje': 'No se encontro el menu del dia'})
 
         # Convierte los datos del menú en un diccionario
         menu_dict = {
